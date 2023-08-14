@@ -36,7 +36,7 @@
         </a>
       </div>
     </header>
-
+<!-- Main -->
     <main>
       <!-- NavItems -->
       <nav>
@@ -44,7 +44,79 @@
           <!-- Nav items linked in JavaScript-File -->
         </div>
       </nav>
+
+      <!-- Task-Section -->
+      <div class="task-Section">
+        <h1>Stay Organized and On Track!</h1>
+
+        <!-- Task-List -->
+        <ul class="ul-Task">
+          <!-- --------------------------------------- -->
+          <li class="li-Task">
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <h3 id="input-name">Task name</h3>
+            <p id="input-priority">Priority</p>
+            <p id="input-category">Category</p>
+            <p id="input-due-date">Due Date</p>
+          </li>
+
+          <li class="li-Task">
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <h3 id="input-name">Task name</h3>
+            <p id="input-priority">Priority</p>
+            <p id="input-category">Category</p>
+            <p id="input-due-date">Due Date</p>
+          </li>
+
+          <!-- --------------------------------------- -->
+        </ul>
+      </div>
+
+      <!-- User-Input -->
+      <form action="">
+        <!-- Heading -->
+        <h2>Add new Task!</h2>
+        <div class="form-section">
+          <!-- ---------------- -->
+          <div class="user-Input">
+            <label for="task-name" id="taskName">Task Name</label>
+            <input
+              type="text"
+              name="task-name"
+              id="task-name"
+              placeholder="Task Name"
+              required
+            />
+
+            <!-- Priority -->
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+
+            <!-- Category -->
+            <label for="category">Category</label>
+            <select name="category" id="category" required>
+              <option value="work">Work</option>
+              <option value="personal">Personal</option>
+            </select>
+
+            <!-- Due-Date -->
+            <label for="due-date">Due Date</label>
+            <input type="date" name="due-date" id="due-date" required />
+          </div>
+          <!-- ---------------- -->
+
+          <!-- Submit Button -->
+          <div class="btn">
+            <button id="submit-btn">Add Task</button>
+          </div>
+        </div>
+      </form>
     </main>
+  
     <!-- ---------------- -->
     <!-- JavaScript-File -->
     <script src="components/main.js"></script>

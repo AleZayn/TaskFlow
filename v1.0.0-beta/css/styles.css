@@ -93,3 +93,95 @@ a {
   width: 25px;
   margin-bottom: 2px;
 }
+
+/* <!-- Task-Section --> */
+.task-Section,
+form {
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 1px var(--primary-color);
+}
+
+h1,
+h2 {
+  line-height: 40px;
+  padding: 4px 0px 4px 20px;
+  color: var(--Text-color);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--secondary-color);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.ul-Task {
+  border: 0.5px solid var(--secondary-color);
+  overflow: auto;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+  height: calc(100% - 70px);
+}
+
+.li-Task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  margin: 10px;
+  border: 0.5px solid var(--accent-color);
+  border-radius: 3px;
+  color: var(--Text-color);
+}
+
+/* Form <!-- User-Input --> */
+.form-section {
+  margin: 20px;
+}
+
+.user-Input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-Input > input,
+select {
+  margin-bottom: 10px;
+}
+
+.user-Input > * {
+  width: 100%;
+}
+
+.user-Input > label {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.user-Input > input,
+select {
+  padding: 10px;
+  outline: none;
+  border: 0.5px solid var(--secondary-color);
+  border-radius: 3px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn > #submit-btn {
+  width: 90%;
+  margin: 20px;
+  font-weight: 400;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
