@@ -4,19 +4,22 @@ Streamline your tasks with TaskFlow, a clean and intuitive to-do list web app de
 
 This project is for my practice in web development, specifically focusing on DOM manipulation, HTML, CSS, and JavaScript.
 
+[Live Preview](https://to-do-task-flow.netlify.app/)
+
 ## Features
 
 - **Basic Version:**
-  - Add tasks to the list (maximum 10 tasks).
+  - Add tasks to the list (maximum 5 tasks).
   - View submitted tasks in a list format.
   - Mark or delete tasks directly from the list.
-  
-- **Updated Version (Additional Features):**
   - Prioritize tasks (high, medium, low).
   - Set due dates for tasks.
+  
+- **Updated Version (Additional Features):**
+
   - Add detailed notes to tasks.
   - Sort and filter tasks by priority, due date, or category.
-  - Pagination for efficient task browsing.
+  - LocalStorage.
   - Responsive design for various screen sizes.
 
 ## Technologies Used
@@ -27,7 +30,7 @@ This project is for my practice in web development, specifically focusing on DOM
 
 ## Getting Started
 
-1. Clone the repository.
+1. Clone the repository `https://github.com/AleZayn/TaskFlow.git`.
 2. Open the `index.html` file in your web browser.
 
 ## Contribution
