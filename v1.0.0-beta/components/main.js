@@ -139,3 +139,9 @@ const clickHandler = (e) => {
 };
 
 btn.addEventListener("click", clickHandler);
+
+// Date Handler
+
+const repDate = new Date();
+const setDate = repDate.toISOString().slice(0, 10);
+dueDate.setAttribute("min", setDate);
