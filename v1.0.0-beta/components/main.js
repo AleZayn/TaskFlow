@@ -132,10 +132,10 @@ const clickHandler = (e) => {
   liTask.appendChild(dltBtn);
   ulTask.appendChild(liTask);
   // -----------------------------------------
-  // taskName.value = "";
-  // priority.value = "";
-  // category.value = "";
-  // dueDate.value = "";
+  taskName.value = "";
+  priority.value = "";
+  category.value = "";
+  dueDate.value = "";
 };
 
 btn.addEventListener("click", clickHandler);
