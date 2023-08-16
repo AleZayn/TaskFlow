@@ -1,0 +1,198 @@
+/* google-font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap");
+
+/* root */
+:root {
+  --primary-color: #f5f5f5;
+  --secondary-color: #349ce5;
+  --accent-color: #00d34d;
+  --Text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: var(--secondary-color);
+  height: 70px;
+  padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > .logo {
+  font-size: 2rem;
+  font-weight: 600;
+}
+.logo > p {
+  color: var(--primary-color);
+}
+.logo > p > span {
+  color: var(--Text-color);
+}
+.social-media {
+  display: flex;
+  gap: 30px;
+}
+.social-media > a {
+  text-decoration: none;
+}
+
+.social-media > .icon > img {
+  padding-top: 5px;
+  width: 40px;
+}
+
+/* main */
+main {
+  display: grid;
+  grid-template-columns: 0.6fr 2fr 1fr;
+  height: calc(100vh - 120px);
+}
+
+/* nav */
+nav {
+  background-color: var(--secondary-color);
+  border-top: 0.5px solid var(--primary-color);
+  border-radius: 2px;
+  display: grid;
+  place-content: center;
+}
+
+/* nav-Items */
+.nav-Items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.navLi {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.icon {
+  width: 25px;
+  margin-bottom: 2px;
+}
+
+/* <!-- Task-Section --> */
+.task-Section,
+form {
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px 1px var(--primary-color);
+}
+
+h1,
+h2 {
+  line-height: 40px;
+  padding: 4px 0px 4px 20px;
+  color: var(--Text-color);
+  font-size: 1.5rem;
+  border-bottom: 1px solid var(--secondary-color);
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.ul-Task {
+  border: 0.5px solid var(--secondary-color);
+  overflow: auto;
+  height: 520px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.li-Task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  margin: 10px;
+  border: 0.5px solid var(--accent-color);
+  border-radius: 3px;
+  color: var(--Text-color);
+}
+
+/* Form <!-- User-Input --> */
+.form-section {
+  margin: 20px;
+}
+
+.user-Input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-Input > input,
+select {
+  margin-bottom: 10px;
+}
+
+.user-Input > * {
+  width: 100%;
+}
+
+.user-Input > label {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.user-Input > input,
+select {
+  padding: 10px;
+  outline: none;
+  border: 0.5px solid var(--secondary-color);
+  border-radius: 3px;
+}
+
+/* addbtn */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn > #submit-btn {
+  width: 90%;
+  margin: 20px;
+  font-weight: 400;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* dltbtn */
+.dltbtn {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
