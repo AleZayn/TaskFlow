@@ -196,3 +196,70 @@ select {
   border-radius: 3px;
   cursor: pointer;
 }
+
+/* responsive-Design */
+@media screen and (max-width: 940px) {
+  body {
+    font-size: 14px;
+  }
+  /* Header */
+  header {
+    height: 60px;
+    padding: 0 5%;
+    overflow-x: hidden;
+  }
+  header > .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  /* main */
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .col-1 {
+    order: 1;
+  }
+
+  .col-2 {
+    order: 2;
+  }
+
+  .col-3 {
+    order: 3;
+  }
+  /* nav */
+  nav {
+    display: flex;
+    background-color: var(--primary-color);
+    margin: 10px 1%;
+    align-items: center;
+  }
+
+  /* nav-Items */
+  .nav-Items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .navLi {
+    gap: 10px;
+  }
+  a {
+    color: var(--Text-color);
+  }
+  .li-Task {
+    gap: 10px;
+    font-size: 0.5rem;
+    padding: 8px;
+    margin: 2px;
+  }
+
+  .dltbtn {
+    font-size: 0.5rem;
+    padding: 7px;
+  }
+}
