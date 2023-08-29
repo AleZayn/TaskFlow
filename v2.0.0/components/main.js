@@ -58,7 +58,8 @@ const priority = document.querySelector("#priority");
 const category = document.querySelector("#category");
 const dueDate = document.querySelector("#due-date");
 const btn = document.querySelector("#submit-btn");
-let counter = 1;
+
+const storeTaskInfo = [];
 
 const clickHandler = (e) => {
   e.preventDefault();
@@ -108,20 +109,30 @@ const clickHandler = (e) => {
   });
 
   // chekBox
+
   chekBox.addEventListener("click", () => {
-    if (liTask.style.textDecoration === "line-through") {
-      liTask.style.textDecoration = "none";
-    } else {
+    if (chekBox.checked) {
       liTask.style.textDecoration = "line-through";
+    } else {
+      liTask.style.textDecoration = "none";
     }
   });
 
   // --------------------------------------
-  if (counter == 6) {
-    ulTask.removeChild(liTask);
-    return;
-  }
-  counter++;
+
+  // ---------------------------------------
+  // localStorage
+  const infoadded = {
+    task: taskName.value,
+    priority: priority.value,
+    category: category.value,
+    dueDate: dueDate.value,
+    chekBox: chekBox.checked,
+  };
+  storeTaskInfo.push(infoadded);
+  localStorage.setItem("storedInfo", JSON.stringify(storeTaskInfo));
+
+  // ---------------------------------------
 
   // ---------------------------------------
   liTask.appendChild(chekBox);
