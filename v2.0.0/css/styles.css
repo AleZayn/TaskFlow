@@ -253,13 +253,16 @@ select {
   }
   .li-Task {
     gap: 10px;
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     padding: 8px;
     margin: 2px;
   }
 
   .dltbtn {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     padding: 7px;
   }
+}
+:checked {
+  accent-color: var(--accent-color);
 }
