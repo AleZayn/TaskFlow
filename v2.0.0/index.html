@@ -36,36 +36,38 @@
         </a>
       </div>
     </header>
-<!-- Main -->
+    <!-- Main -->
     <main>
       <!-- NavItems -->
       <nav>
-        <div class="nav-Items">
+        <div class="nav-Items col-1">
           <!-- Nav items linked in JavaScript-File -->
         </div>
       </nav>
 
       <!-- Task-Section -->
-      <div class="task-Section">
+      <div class="task-Section col-2">
         <h1>Stay Organized and On Track!</h1>
-
+        <!-- ------------------- -->
+        <p style="font-size: 14px; padding: 0 20px">
+          Filter Your Task by Category
+        </p>
+        <select
+          id="category-Filter"
+          name="category-Filter"
+          style="margin: 0 20px"
+        >
+          <option value="All">All</option>
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+        </select>
+        <!-- -------------------------- -->
         <!-- Task-List -->
-        <ul class="ul-Task">
-          <!-- --------------------------------------- -->
-          <!-- <li class="li-Task">
-            <input type="checkbox" name="checkbox" id="checkbox" />
-            <h3 id="input-name">Task name</h3>
-            <p id="input-priority">Priority</p>
-            <p id="input-category">Category</p>
-            <p id="input-due-date">Due Date</p>
-          </li> -->
-
-          <!-- --------------------------------------- -->
-        </ul>
+        <ul class="ul-Task"></ul>
       </div>
 
       <!-- User-Input -->
-      <form action="">
+      <form action="" col-3>
         <!-- Heading -->
         <h2>Add new Task!</h2>
         <div class="form-section">
@@ -77,22 +79,23 @@
               name="task-name"
               id="task-name"
               placeholder="Task Name"
+              maxlength="10"
               required
             />
 
             <!-- Priority -->
             <label for="priority">Priority</label>
             <select id="priority" name="priority" required>
-              <option value="high">High</option>
-              <option value="medium">Medium</option>
-              <option value="low">Low</option>
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
             </select>
 
             <!-- Category -->
             <label for="category">Category</label>
             <select name="category" id="category" required>
-              <option value="work">Work</option>
-              <option value="personal">Personal</option>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
             </select>
 
             <!-- Due-Date -->
@@ -108,7 +111,7 @@
         </div>
       </form>
     </main>
-  
+
     <!-- ---------------- -->
     <!-- JavaScript-File -->
     <script src="components/main.js"></script>

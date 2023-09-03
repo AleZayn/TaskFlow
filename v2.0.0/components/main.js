@@ -51,18 +51,70 @@ navLinks.forEach((link) => {
 });
 
 // <!-- Task-List -->
-
 const ulTask = document.querySelector(".ul-Task");
 const taskName = document.querySelector("#task-name");
 const priority = document.querySelector("#priority");
 const category = document.querySelector("#category");
 const dueDate = document.querySelector("#due-date");
 const btn = document.querySelector("#submit-btn");
-let counter = 1;
+
+const storeTaskInfo = JSON.parse(localStorage.getItem("info")) || [];
+
+const renderStoredTasks = () => {
+  storeTaskInfo.forEach((info) => {
+    const liTask = document.createElement("li");
+    liTask.classList.add("li-Task");
+
+    const chekBox = document.createElement("input");
+    chekBox.setAttribute("type", "checkbox");
+    chekBox.checked = info.completed;
+    chekBox.id = "chekbox";
+
+    const inputName = document.createElement("h3");
+    inputName.textContent = info.task;
+
+    const priorityDisplay = document.createElement("p");
+    priorityDisplay.textContent = info.priority;
+
+    const categoryDisplay = document.createElement("p");
+    categoryDisplay.textContent = info.category;
+
+    const dateDisplay = document.createElement("p");
+    dateDisplay.textContent = info.dueDate;
+
+    const dltBtn = document.createElement("button");
+    dltBtn.textContent = "Delete";
+    dltBtn.classList = "dltbtn";
+
+    dltBtn.addEventListener("click", () => {
+      ulTask.removeChild(liTask);
+      const index = storeTaskInfo.findIndex((item) => item.task === info.task);
+      if (index !== -1) {
+        storeTaskInfo.splice(index, 1);
+        localStorage.setItem("info", JSON.stringify(storeTaskInfo));
+      }
+    });
+
+    chekBox.addEventListener("click", () => {
+      info.completed = chekBox.checked;
+      localStorage.setItem("info", JSON.stringify(storeTaskInfo));
+    });
+
+    liTask.appendChild(chekBox);
+    liTask.appendChild(inputName);
+    liTask.appendChild(priorityDisplay);
+    liTask.appendChild(categoryDisplay);
+    liTask.appendChild(dateDisplay);
+    liTask.appendChild(dltBtn);
+    ulTask.appendChild(liTask);
+  });
+};
+
+renderStoredTasks();
 
 const clickHandler = (e) => {
   e.preventDefault();
-  // -----------------------------------------
+
   if (
     taskName.value === "" ||
     priority.value === "" ||
@@ -76,29 +128,22 @@ const clickHandler = (e) => {
   const liTask = document.createElement("li");
   liTask.classList.add("li-Task");
 
-  // ChekBox
   const chekBox = document.createElement("input");
   chekBox.setAttribute("type", "checkbox");
   chekBox.id = "chekbox";
 
-  // Name
   const inputName = document.createElement("h3");
   inputName.textContent = taskName.value;
 
-  // Priority
   const priorityDisplay = document.createElement("p");
   priorityDisplay.textContent = priority.value;
 
-  // Category
   const categoryDisplay = document.createElement("p");
   categoryDisplay.textContent = category.value;
 
-  // Due-date
   const dateDisplay = document.createElement("p");
   dateDisplay.textContent = dueDate.value;
 
-  // ------------------------------------
-  // Delete-Btn
   const dltBtn = document.createElement("button");
   dltBtn.textContent = "Delete";
   dltBtn.classList = "dltbtn";
@@ -107,23 +152,17 @@ const clickHandler = (e) => {
     ulTask.removeChild(liTask);
   });
 
-  // chekBox
-  chekBox.addEventListener("click", () => {
-    if (liTask.style.textDecoration === "line-through") {
-      liTask.style.textDecoration = "none";
-    } else {
-      liTask.style.textDecoration = "line-through";
-    }
-  });
+  const infoadded = {
+    task: taskName.value,
+    priority: priority.value,
+    category: category.value,
+    dueDate: dueDate.value,
+    completed: false,
+  };
 
-  // --------------------------------------
-  if (counter == 6) {
-    ulTask.removeChild(liTask);
-    return;
-  }
-  counter++;
+  storeTaskInfo.push(infoadded);
+  localStorage.setItem("info", JSON.stringify(storeTaskInfo));
 
-  // ---------------------------------------
   liTask.appendChild(chekBox);
   liTask.appendChild(inputName);
   liTask.appendChild(priorityDisplay);
@@ -131,7 +170,7 @@ const clickHandler = (e) => {
   liTask.appendChild(dateDisplay);
   liTask.appendChild(dltBtn);
   ulTask.appendChild(liTask);
-  // -----------------------------------------
+
   taskName.value = "";
   priority.value = "";
   category.value = "";
@@ -141,7 +180,71 @@ const clickHandler = (e) => {
 btn.addEventListener("click", clickHandler);
 
 // Date Handler
-
 const repDate = new Date();
 const setDate = repDate.toISOString().slice(0, 10);
 dueDate.setAttribute("min", setDate);
+
+// -----------------
+// Function to filter tasks by category
+function categoryWorkFilter(selectedCategory) {
+  ulTask.innerHTML = ""; 
+
+  storeTaskInfo.forEach((info) => {
+    if (selectedCategory === "All" || info.category === selectedCategory) {
+      const liTask = document.createElement("li");
+      liTask.classList.add("li-Task");
+
+      const chekBox = document.createElement("input");
+      chekBox.setAttribute("type", "checkbox");
+      chekBox.checked = info.completed;
+      chekBox.id = "chekbox";
+
+      const inputName = document.createElement("h3");
+      inputName.textContent = info.task;
+
+      const priorityDisplay = document.createElement("p");
+      priorityDisplay.textContent = info.priority;
+
+      const categoryDisplay = document.createElement("p");
+      categoryDisplay.textContent = info.category;
+
+      const dateDisplay = document.createElement("p");
+      dateDisplay.textContent = info.dueDate;
+
+      const dltBtn = document.createElement("button");
+      dltBtn.textContent = "Delete";
+      dltBtn.classList = "dltbtn";
+
+      dltBtn.addEventListener("click", () => {
+        ulTask.removeChild(liTask);
+        const index = storeTaskInfo.findIndex(
+          (item) => item.task === info.task
+        );
+        if (index !== -1) {
+          storeTaskInfo.splice(index, 1);
+          localStorage.setItem("info", JSON.stringify(storeTaskInfo));
+        }
+      });
+
+      chekBox.addEventListener("click", () => {
+        info.completed = chekBox.checked;
+        localStorage.setItem("info", JSON.stringify(storeTaskInfo));
+      });
+
+      liTask.appendChild(chekBox);
+      liTask.appendChild(inputName);
+      liTask.appendChild(priorityDisplay);
+      liTask.appendChild(categoryDisplay);
+      liTask.appendChild(dateDisplay);
+      liTask.appendChild(dltBtn); 
+      ulTask.appendChild(liTask);
+    }
+  });
+}
+
+// Event listener for category filtering
+const categoryFilter = document.getElementById("category-Filter");
+categoryFilter.addEventListener("change", () => {
+  const selectedCategory = categoryFilter.value;
+  categoryWorkFilter(selectedCategory);
+});
