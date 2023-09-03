@@ -5,7 +5,7 @@ Streamline your tasks with TaskFlow, a clean and intuitive to-do list web app de
 This project is for my practice in web development, specifically focusing on DOM manipulation, HTML, CSS, and JavaScript.
 
 [LiveVisit](https://to-do-task-flow.netlify.app/)
-
+[Updated version v2.0.0](https://taskflow-v2.netlify.app/)
 ## Features
 
 - **Basic Version:**
